@@ -4,30 +4,42 @@ export default class Search extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			search: ''
+			search: '',
+			data: []
 		};
 	}
 
+	fetchData(query){
+		let restUrl = 'https://lospleyers.com/wp-json/wp/v2/posts?search='+query+'&per_page=20';
+		fetch(restUrl)
+		.then(response=>response.json())
+		.then(response=>{
+			this.setState({
+				data: response
+			})
+		});
+	}
+
 	updateSearch(event){
+		this.fetchData(event.target.value);
 		this.setState({
-			search: event.target.value.substr(0, 20)
+			search: event.target.value
 		});
 	}
 
 	render(){
-		let filteredContacts = this.props.contacts;
-		let contact = filteredContacts.map( (contact, i)=>{
-			return(
-				<li key={contact.id}>{contact.name} | {contact.phone}</li>
-			);
-		});
-
 		return(
 			<div>
-				<ul>
-					{contact}
-				</ul>
 				<input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} />
+				<ul>
+				{
+					this.state.data.map((post)=>{
+						return(
+							<li>{post.title.rendered} | {post.link}</li>
+						);		
+					})
+				}
+				</ul>
 			</div>	
 		);
 	}

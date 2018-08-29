@@ -36,8 +36,10 @@ let contacts = [
 document.addEventListener('DOMContentLoaded', function() {
   // ReactDOM.render(<Admin wpObject={window.wpr_object} />, document.getElementById('wp-reactivate-admin'));
   // ReactDOM.render(<HomeOptions wpObject={window.wpr_object}/>, document.getElementById('wp-reactivate-admin'));
-  // ReactDOM.render(<Search contacts={contacts} />,document.getElementById('wp-reactivate-admin'));
+  // ReactDOM.render(<ContactList contacts={contacts} />, document.getElementById('wp-reactivate-admin'));
+
   ReactDOM.render(
-  	<ContactList contacts={contacts} />, document.getElementById('wp-reactivate-admin')
-  	);
+  		<Search />,
+  		document.getElementById('wp-reactivate-admin')
+	);
 });
