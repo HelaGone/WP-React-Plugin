@@ -1,4 +1,5 @@
 import React from 'react';
+import PostOption from './PostOption'
 
 export default class Search extends React.Component{
 	constructor(props){
@@ -33,9 +34,9 @@ export default class Search extends React.Component{
 				<input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} />
 				<ul>
 				{
-					this.state.data.map((post)=>{
+					this.state.data.map((post, i)=>{
 						return(
-							<li>{post.title.rendered} | {post.link}</li>
+							<PostOption key={'post_'+i} post={post} />
 						);		
 					})
 				}
