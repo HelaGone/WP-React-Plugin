@@ -46,5 +46,5 @@ export default class fetchWP {
         });
       });
     }
-  }//END _setup
+  }//end _setup
 }

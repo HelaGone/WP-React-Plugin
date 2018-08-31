@@ -74,6 +74,7 @@ class Plugin {
 	 */
 	public static function activate() {
 		add_option( 'hk_home_options' );
+		
 	}
 
 	/**
