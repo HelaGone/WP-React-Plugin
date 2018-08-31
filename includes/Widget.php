@@ -4,13 +4,12 @@
  *
  *
  * @package   WP-Reactivate
- * @author    Pangolin
+ * @author    Holkan
  * @license   GPL-3.0
- * @link      https://gopangolin.com
- * @copyright 2017 Pangolin (Pty) Ltd
+ * @link      https://cubeinthebox.com
  */
 
-namespace Pangolin\WPR;
+namespace Cubeinthebox\WPR;
 
 /**
  * @subpackage Widget

@@ -4,18 +4,17 @@
  *
  *
  * @package   Home-Options
- * @author    Pangolin
+ * @author    Holkan
  * @license   GPL-3.0
- * @link      https://gopangolin.com
- * @copyright 2017 Pangolin (Pty) Ltd
+ * @link      https://cubeinthebox.com
  *
  * @wordpress-plugin
  * Plugin Name:       Home Options
- * Plugin URI:        https://gopangolin.com
+ * Plugin URI:        https://cubeinthebox.com
  * Description:       React Home Options
  * Version:           1.0.0
- * Author:            pangolin
- * Author URI:        https://gopangolin.com
+ * Author:            Holkan
+ * Author URI:        https://cubeinthebox.com
  * Text Domain:       wp-reactivate
  * License:           GPL-3.0
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
@@ -23,7 +22,7 @@
  */
 
 
-namespace Pangolin\WPR;
+namespace Cubeinthebox\WPR;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -81,7 +80,7 @@ function init() {
 	$wpr_admin = Admin::get_instance();
 	$wpr_rest = Endpoint\Admin::get_instance();
 }
-add_action( 'plugins_loaded', 'Pangolin\\WPR\\init' );
+add_action( 'plugins_loaded', 'Cubeinthebox\\WPR\\init' );
 
 
 
@@ -93,11 +92,11 @@ add_action( 'plugins_loaded', 'Pangolin\\WPR\\init' );
 function widget_init() {
 	return register_widget( new Widget );
 }
-add_action( 'widgets_init', 'Pangolin\\WPR\\widget_init' );
+add_action( 'widgets_init', 'Cubeinthebox\\WPR\\widget_init' );
 
 /**
  * Register activation and deactivation hooks
  */
-register_activation_hook( __FILE__, array( 'Pangolin\\WPR\\Plugin', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Pangolin\\WPR\\Plugin', 'deactivate' ) );
+register_activation_hook( __FILE__, array( 'Cubeinthebox\\WPR\\Plugin', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'Cubeinthebox\\WPR\\Plugin', 'deactivate' ) );
 

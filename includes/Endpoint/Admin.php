@@ -4,14 +4,13 @@
  *
  *
  * @package   WP-Reactivate
- * @author    Pangolin
+ * @author    Holkan
  * @license   GPL-3.0
- * @link      https://gopangolin.com
- * @copyright 2017 Pangolin (Pty) Ltd
+ * @link      https://cubeinthebox.com
  */
 
-namespace Pangolin\WPR\Endpoint;
-use Pangolin\WPR;
+namespace Cubeinthebox\WPR\Endpoint;
+use Cubeinthebox\WPR;
 
 /**
  * @subpackage REST_Controller
@@ -68,7 +67,7 @@ class Admin {
      * Register the routes for the objects of the controller.
      */
     public function register_routes() {
-        $version = '1';
+        $version = '2';
         $namespace = $this->plugin_slug . '/v' . $version;
         $endpoint = '/admin/';
 
