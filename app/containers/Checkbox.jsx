@@ -11,11 +11,11 @@ export default class Checkbox extends React.Component{
 
 	toggleCheckboxChange = () => {
 		const {handleCheckboxChange, label} = this.props;
-
-		this.setState(({isChecked}) => ({
-			isChecked: !isChecked,
-		}));
-
+		this.setState(
+			({isChecked}) => ({
+				isChecked: !isChecked,
+			})
+		);
 		handleCheckboxChange(label);
 	}
 
